@@ -5,7 +5,8 @@ import Sidebar from './Sidebar.vue';
 <template>
   <div class="relative poppins duration-300 flex min-h-screen">
     <div
-      class="text-cyan-100  justify-between flex flex-col border-r border-graylight py-9 w-16 sm:w-48 space-y-6 bg-bar inset-y-0 left-0 transform -translate-x-0 transition duration-200 ease-in-out relative sm:translate-x-0"
+      class="text-cyan-100  justify-between flex flex-col border-r border-graylight py-9 w-16 sm:w-48 space-y-6 bg-bar left-0 transition duration-200 ease-in-out relative sm:static sm:translate-x-0"
+      style="position: sticky; top: 0; height: 100vh; overflow-y: auto;"
     >
       <nav>
         <a
@@ -25,14 +26,14 @@ import Sidebar from './Sidebar.vue';
       <a href="" class="flex items-center font-bold justify-center flex-col gap-2 px-1">
         <div class="w-full  h-[2px] bg-graylight mb-6" ></div>
         <div class="flex text-center items-center space-x-2">
-            <img src="/src/assets/logo.png" alt="" />
+            <img src="/src/assets/img/logo.png" alt="" />
             <span class="sm:block hidden text-gray2">N2Mobil</span>
         </div>
       
       </a>
     </div>
 
-    <div class="flex-1">
+    <div class="flex-1 p-6">
       
       
        <router-view />
