@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import HomeView from '../views/HomeView.vue'
 import Users from '../views/Users.vue'
 
 const router = createRouter({
@@ -8,16 +7,23 @@ const router = createRouter({
     {
       path: '/',
       name: 'Users',
-      component: Users
+      component: Users,
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/users/:id/todos',
+      name: 'user-todos', // Bu adı değiştirdim
+      component: () => import('../views/user/[id]/todos.vue'), // Bu dosyayı oluştur
+    },
+    {
+      path: '/users/:id/posts',
+      name: 'user-posts',
+      component: () => import('../views/user/[id]/posts.vue'),
+    },
+    {
+      path: '/users/:id/albums',
+      name: 'user-albums',
+      component: () => import('../views/user/[id]/albums.vue'),
+    },
   ]
 })
 
