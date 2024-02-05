@@ -20,10 +20,18 @@ const router = createRouter({
       component: () => import('../views/user/[id]/posts.vue'),
     },
     {
-      path: '/users/:id/albums',
+      path: '/users/:id/albums/',
       name: 'user-albums',
-      component: () => import('../views/user/[id]/albums.vue'),
+      component: () => import('../views/user/[id]/albums/index.vue'),
+     
     },
+    {
+      path: '/users/:id/albums/:albumId',
+      name: 'user-album-photos',
+      component: () => import('../views/user/[id]/albums/[id].vue'),
+    }
+    
+    
   ]
 })
 

@@ -20,7 +20,6 @@ onMounted(() => {
       currentUserId.value = route.params.id;
       userStore.fetchUsers().then(() => {
         currentUser.value = userStore.getUserById(Number(currentUserId.value));
-        console.log(currentUser.value);
       });
     }
   });
@@ -111,26 +110,26 @@ onMounted(() => {
         </router-link>
 
         <router-link
-          v-if="currentUserId !== null"
-          :to="{ name: 'user-albums', params: { id: currentUserId } }"
-          :class="{ 'bg-white': $route.name === 'user-albums' }"
-          class="relative flex gap-3  sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
-        >
-          <icons.IconPhotoHeart
-            class="text-purple"
-            :size="18"
-            stroke-width="2"
-          />
-          <div
-            v-if="$route.name === 'user-albums'"
-            class="transition-all absolute left-0 h-full w-2 rounded-r-xl bg-purple duration-200"
-          ></div>
-          <span
-          class="sm:block hidden text-[#959595]"
-          :class="{ '!text-purple': $route.name === 'user-albums' }"
-            >Albums</span
-          >
-        </router-link>
+  v-if="currentUserId !== null"
+  :to="{ name: 'user-albums', params: { id: currentUserId } }"
+  :class="{ 'bg-white': $route.name === 'user-albums' || $route.name === 'user-album-photos' }"
+  class="relative flex gap-3  sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
+>
+  <icons.IconPhotoHeart
+    class="text-purple"
+    :size="18"
+    stroke-width="2"
+  />
+  <div
+    v-if="$route.name === 'user-albums' || $route.name === 'user-album-photos'"
+    class="transition-all absolute left-0 h-full w-2 rounded-r-xl bg-purple duration-200"
+  ></div>
+  <span
+    class="sm:block hidden text-[#959595]"
+    :class="{ '!text-purple': $route.name === 'user-albums' || $route.name === 'user-album-photos' }"
+  >Albums</span>
+</router-link>
+
       </nav>
       <a
         href=""

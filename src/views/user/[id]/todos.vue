@@ -56,13 +56,13 @@ const updateTodoStatus = (todo) => {
       <h1>Go Home</h1>
     </div>
     <div class="md:p-5" v-if="todos.length > 0">
-      <ul class="space-y-6">
+      <ul class="space-y-10">
         <li
           class="flex flex-row space-x-5"
           v-for="todo in todos"
           :key="todo.id"
         >
-          <div class="checkbox-wrapper-13 space-x-4 flex-row flex">
+          <div class="checkbox-wrapper-13 gap-4 flex-row flex">
             <input
               id="c1-13 min-w-8 min-h-8"
               type="checkbox"
@@ -70,7 +70,7 @@ const updateTodoStatus = (todo) => {
               class=""
               @change="updateTodoStatus(todo)"
             />
-            <label for="cl-13" class="text-sm text-gray2">
+            <label for="cl-13" class="text-sm ml-4 text-gray2">
               {{ todo.title }}
             </label>
           </div>
