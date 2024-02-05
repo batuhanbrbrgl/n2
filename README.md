@@ -1,7 +1,7 @@
 # n2mobil
 
 ## Deployment
-# n2-batuhanbrbrgl.vercel.app
+# https://n2-batuhanbrbrgl.vercel.app/
 
 This template should help get you started developing with Vue 3 in Vite.
 
