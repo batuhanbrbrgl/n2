@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, defineEmits, onBeforeUnmount } from 'vue';
+import { ref, onBeforeUnmount } from 'vue';
 import * as TablerIcons from "@tabler/icons-vue";
 
 const icons = TablerIcons;
