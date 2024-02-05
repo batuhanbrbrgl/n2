@@ -72,7 +72,7 @@ onMounted(() => {
           v-if="currentUserId !== null"
           :to="{ name: 'user-todos', params: { id: currentUserId } }"
           :class="{ 'bg-white': $route.name === 'user-todos' }"
-          class="relative flex gap-3  sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
+          class="relative flex gap-3 sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
         >
           <icons.IconCheckupList
             class="text-purple"
@@ -84,7 +84,6 @@ onMounted(() => {
             class="transition-all absolute left-0 h-full w-2 rounded-r-xl bg-purple duration-200"
           ></div>
           <span
-           
             class="sm:block hidden text-[#959595]"
             :class="{ '!text-purple': $route.name === 'user-todos' }"
             >Todos</span
@@ -95,7 +94,7 @@ onMounted(() => {
           v-if="currentUserId !== null"
           :to="{ name: 'user-posts', params: { id: currentUserId } }"
           :class="{ 'bg-white': $route.name === 'user-posts' }"
-          class="relative flex gap-3  sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
+          class="relative flex gap-3 sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
         >
           <icons.IconNotebook class="text-purple" :size="18" stroke-width="2" />
           <div
@@ -103,33 +102,44 @@ onMounted(() => {
             class="transition-all absolute left-0 h-full w-2 rounded-r-xl bg-purple duration-200"
           ></div>
           <span
-          :class="{ '!text-purple': $route.name === 'user-posts' }"
-          class="sm:block hidden text-[#959595]"
+            :class="{ '!text-purple': $route.name === 'user-posts' }"
+            class="sm:block hidden text-[#959595]"
             >Posts</span
           >
         </router-link>
 
         <router-link
-  v-if="currentUserId !== null"
-  :to="{ name: 'user-albums', params: { id: currentUserId } }"
-  :class="{ 'bg-white': $route.name === 'user-albums' || $route.name === 'user-album-photos' }"
-  class="relative flex gap-3  sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
->
-  <icons.IconPhotoHeart
-    class="text-purple"
-    :size="18"
-    stroke-width="2"
-  />
-  <div
-    v-if="$route.name === 'user-albums' || $route.name === 'user-album-photos'"
-    class="transition-all absolute left-0 h-full w-2 rounded-r-xl bg-purple duration-200"
-  ></div>
-  <span
-    class="sm:block hidden text-[#959595]"
-    :class="{ '!text-purple': $route.name === 'user-albums' || $route.name === 'user-album-photos' }"
-  >Albums</span>
-</router-link>
-
+          v-if="currentUserId !== null"
+          :to="{ name: 'user-albums', params: { id: currentUserId } }"
+          :class="{
+            'bg-white':
+              $route.name === 'user-albums' ||
+              $route.name === 'user-album-photos',
+          }"
+          class="relative flex gap-3 sm:px-5 duration-200 justify-center sm:justify-normal items-center py-3"
+        >
+          <icons.IconPhotoHeart
+            class="text-purple"
+            :size="18"
+            stroke-width="2"
+          />
+          <div
+            v-if="
+              $route.name === 'user-albums' ||
+              $route.name === 'user-album-photos'
+            "
+            class="transition-all absolute left-0 h-full w-2 rounded-r-xl bg-purple duration-200"
+          ></div>
+          <span
+            class="sm:block hidden text-[#959595]"
+            :class="{
+              '!text-purple':
+                $route.name === 'user-albums' ||
+                $route.name === 'user-album-photos',
+            }"
+            >Albums</span
+          >
+        </router-link>
       </nav>
       <a
         href=""
