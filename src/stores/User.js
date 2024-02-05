@@ -74,6 +74,7 @@ export const useUserStore = defineStore('user', {
     },
 
     async fetchUserAlbums() {
+      
       try {
         const response = await fetch(`https://jsonplaceholder.typicode.com/albums?userId=${this.users[0]?.id}`);
         const data = await response.json();
@@ -169,5 +170,9 @@ export const useUserStore = defineStore('user', {
     getUserById(id) {
       return this.users.find(user => user.id === id);
     },
+    
+
+
   },
+  
 });

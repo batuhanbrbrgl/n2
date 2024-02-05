@@ -5,18 +5,24 @@ import * as TablerIcons from "@tabler/icons-vue";
 
 const icons = TablerIcons;
 const userStore = useUserStore();
+const isLoading = ref(true);
 
 const users = ref([]);
 
 onMounted(async () => {
   await userStore.fetchUsers();
   users.value = userStore.getUsers();
+  isLoading.value = false;
 });
 </script>
 
 <template>
-  <div class="">
-    <h1 class="font-semibold text-xl text-blackgray py-6">All Users</h1>
+  <div class="flex flex-col min-h-screen">
+    <div v-if="isLoading" class="loader-container">
+      <div class="loader"></div>
+    </div>
+    <div v-else>
+      <h1 class="font-semibold text-xl text-blackgray py-6">All Users</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
       <router-link
         :to="{ name: 'user-todos', params: { id: user.id } }"
@@ -92,6 +98,9 @@ onMounted(async () => {
       </router-link>
     </div>
   </div>
+    </div>
+    
 </template>
 
-<style></style>
+<style>
+</style>

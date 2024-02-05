@@ -1,7 +1,12 @@
 <template>
+  <div class="flex flex-col min-h-screen">
+    <div v-if="isLoading" class="loader-container">
+      <div class="loader"></div>
+    </div>
   <div class="space-y-10">
     <div class="flex flex-row space-x-5 text-xl font-semibold text-blackgray">
-      <router-link :to="{ name: 'user-albums', params: { id: selectedUserId } }">
+      <router-link :to="{ name: 'user-albums', params: { userId: selectedUserId } }">
+
         <icons.IconSquareRoundedArrowLeft :size="24" stroke-width="2" />
       </router-link>
       
@@ -12,6 +17,8 @@
       <img v-for="photo in albumPhotos[0]" :key="photo.id" :src="photo.url" :alt="photo.title" class="w-52 h-52" />
     </div>
   </div>
+</div>
+
 </template>
 
 <script setup>
@@ -22,6 +29,7 @@ import * as TablerIcons from "@tabler/icons-vue";
 const icons = TablerIcons;
 const userStore = useUserStore();
 const albumPhotos = ref([]);
+const isLoading = ref(true);
 
 onBeforeMount(async () => {
   await userStore.fetchUsers();
@@ -30,13 +38,12 @@ onBeforeMount(async () => {
 
   await userStore.fetchUserAlbums(selectedUserId);
   const albums = await userStore.getAlbums();
-  console.log('batuhanndssdsddssdsd:', albums);
+  isLoading.value = false;
 
   albumPhotos.value = await Promise.all(albums.map(async (album) => {
     await userStore.fetchAlbumPhotos(selectedUserId, album.id);
     return userStore.getPhotos().slice();
   }));
-  console.log('ahmet', albumPhotos.value);
 });
 </script>
 

@@ -1,4 +1,8 @@
 <template>
+  <div class="flex flex-col min-h-screen">
+    <div v-if="isLoading" class="loader-container">
+      <div class="loader"></div>
+    </div>
   <div class="space-y-10">
     <div class="flex flex-row space-x-5 text-xl font-semibold text-blackgray">
       <router-link to="/">
@@ -27,6 +31,8 @@
       </router-link>
     </div>
   </div>
+</div>
+
 </template>
 
 <script setup>
@@ -37,6 +43,7 @@ import * as TablerIcons from '@tabler/icons-vue';
 const icons = TablerIcons;
 const userStore = useUserStore();
 const albums = ref([]);
+const isLoading = ref(true);
 
 onBeforeMount(async () => {
   await userStore.fetchUsers();
@@ -45,6 +52,8 @@ onBeforeMount(async () => {
   await userStore.fetchUserAlbums(userId);
 
   albums.value = await userStore.getAlbums();
+  isLoading.value = false;
+
 });
 </script>
 
