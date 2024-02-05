@@ -28,7 +28,7 @@ export const useUserStore = defineStore('user', {
 
         this.setUsers(data);
 
-        // Users fetch edildikten sonra todos'u fetch et
+        // Users fetch edildikten sonra todos fetch et
         await this.fetchUserTodos();
       } catch (error) {
       }
@@ -87,10 +87,9 @@ export const useUserStore = defineStore('user', {
 
         this.setAlbums(formattedAlbums);
 
-        // Her albüm için fotoğrafları ayrı ayrı getir
         for (const album of formattedAlbums) {
           await this.fetchAlbumPhotos(album.id);
-          album.photos = this.getPhotos().slice(); // Albüm fotoğraflarını kopyala
+          album.photos = this.getPhotos().slice(); 
         }
       } catch (error) {
       }
