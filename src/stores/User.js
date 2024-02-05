@@ -22,7 +22,7 @@ export const useUserStore = defineStore('user', {
           }
 
           const images = ['jane.png', 'john.png', 'nazli.png'];
-          user.image = `/src/assets/img/${images[index % images.length]}`;
+          user.image = `/src/assets/img/${images[index]}`;
         });
 
         this.setUsers(data);
