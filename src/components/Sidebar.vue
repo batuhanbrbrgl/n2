@@ -148,7 +148,7 @@ onMounted(() => {
         <div class="w-full h-[2px] bg-graylight mb-6"></div>
 
         <div class="flex text-center items-center space-x-2">
-          <img class="" src="/src/assets/img/logo.png" alt="" />
+          <img class="" src="/img/logo.png" alt="" />
           <span class="sm:block hidden text-gray2">N2Mobil</span>
         </div>
       </a>

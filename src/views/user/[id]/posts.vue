@@ -34,7 +34,7 @@ const closeModal = () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center min-h-screen">
+  <div class="flex flex-col  min-h-screen">
     <div v-if="isLoading" class="loader-container">
       <div class="loader"></div>
     </div>

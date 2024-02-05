@@ -42,7 +42,7 @@ onBeforeUnmount(() => {
             <div class="modal-body p-5 space-y-9">
               <div class="flex flex-row space-x-2">
                 <div class="rounded-full overflow-hidden min-w-12 min-h-12 w-12 h-12">
-                  <img src="/src/assets/img/leyla.png" class="rounded-full w-full h-full object-cover" alt="" />
+                  <img src="/img/leyla.png" class="rounded-full w-full h-full object-cover" alt="" />
                 </div>
                 <div class="flex flex-col">
                   <span class="text-lg font-medium text-gray2">Leyla Selim</span>
@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
               </div>
               <div class="flex flex-row space-x-2">
                 <div class="rounded-full overflow-hidden min-w-12 min-h-12 w-12 h-12">
-                  <img src="/src/assets/img/jane.png" class="rounded-full w-full h-full object-cover" alt="" />
+                  <img src="/img/jane.png" class="rounded-full w-full h-full object-cover" alt="" />
                 </div>
                 <div class="flex flex-col">
                   <span class="text-lg font-medium text-gray2">{{ user.name }}</span>
@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
               </div>
               <div class="flex flex-row space-x-2">
                 <div class="rounded-full overflow-hidden min-w-12 min-h-12 w-12 h-12">
-                  <img src="/src/assets/img/leyla.png" class="rounded-full w-full h-full object-cover" alt="" />
+                  <img src="/img/leyla.png" class="rounded-full w-full h-full object-cover" alt="" />
                 </div>
                 <div class="flex flex-col">
                   <span class="text-lg font-medium text-gray2">Leyla Selim</span>
