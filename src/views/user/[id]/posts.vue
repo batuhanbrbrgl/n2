@@ -34,6 +34,7 @@ const closeModal = () => {
 
 <template>
   <div class="space-y-10">
+    
     <div class="flex flex-row space-x-5 text-xl font-semibold text-blackgray">
       <router-link to="/">
         <icons.IconSquareRoundedArrowLeft :size="24" stroke-width="2" />
