@@ -10,9 +10,14 @@ const router = createRouter({
       component: Users,
     },
     {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: () => import('../views/Dashboard.vue'),
+    },
+    {
       path: '/users/:id/todos',
-      name: 'user-todos', // Bu adı değiştirdim
-      component: () => import('../views/user/[id]/todos.vue'), // Bu dosyayı oluştur
+      name: 'user-todos', 
+      component: () => import('../views/user/[id]/todos.vue'), 
     },
     {
       path: '/users/:id/posts',
